@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: lavenderblush;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label, input, select, button, textarea {
+            display: block;
+            width: 25%; /* Adjusted width */
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            width: auto;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management</h1>
+
+ 
+    <form action="insert_task.php" method="POST">
+        <h3>Insert Task</h3>
+        <label for="task_name">Task Name:</label>
+        <input type="text" id="task_name" name="task_name" required>
+        
+        <label for="task_description">Task Description:</label>
+        <textarea id="task_description" name="task_description" rows="4" required></textarea>
+        
+        <label for="task_deadline">Deadline:</label>
+        <input type="date" id="task_deadline" name="task_deadline" required>
+        
+        <label for="task_status">Status:</label>
+        <select id="task_status" name="task_status" required>
+            <option value="Pending">Pending</option>
+            <option value="Complete">Complete</option>
+        </select>
+        
+        <button type="submit">Insert Task</button>
+    </form>
+
+
+  
+    <form action="update_task.php" method="POST">
+        <h3>Update Task</h3>
+        <label for="task_id_update">Task ID:</label>
+        <input type="number" id="task_id_update" name="task_id" required>
+        
+        <label for="task_deadline_update">New Deadline:</label>
+        <input type="date" id="task_deadline_update" name="task_deadline">
+        
+        <label for="task_status_update">Status:</label>
+        <select id="task_status_update" name="task_status">
+            <option value="Pending">Pending</option>
+            <option value="Complete">Complete</option>
+        </select>
+        
+        <button type="submit">Update Task</button>
+    </form>
+
+  
+    <form action="delete_task.php" method="POST">
+        <h3>Delete Task</h3>
+        <label for="task_id_delete">Task ID:</label>
+        <input type="number" id="task_id_delete" name="task_id" required>
+        
+        <button type="submit">Delete Task</button>
+    </form>
+</body>
+</html>
